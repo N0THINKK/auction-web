@@ -1,0 +1,66 @@
+nav {
+  position: relative;
+  width: 100%; /* Mengisi seluruh lebar layar */
+  height: 60px; /* Disarankan sedikit lebih tinggi untuk kejelasan */
+  background: #222;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Menghindari elemen keluar */
+}
+
+nav a {
+  position: relative;
+  display: inline-block;
+  font-size: 1em;
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+  padding: 0 30px;
+  z-index: 1;
+}
+
+nav span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(45deg, #194b4f, #33fffc);
+  border-radius: 0;
+  transition: left 0.9s, width 0.9s;
+}
+
+nav a:hover ~ span {
+  width: 100%; /* Efek geseran */
+  left: 0; /* Dimulai dari kiri penuh */
+}
+
+nav a:nth-child(1):hover ~ span {
+  left: 0; /* Geser ke posisi "Home" */
+}
+
+nav a:nth-child(2):hover ~ span {
+  left: 25%; /* Geser ke posisi "Products" */
+}
+
+nav a:nth-child(3):hover ~ span {
+  left: 50%; /* Geser ke posisi "Profile" */
+}
+
+nav a:nth-child(4):hover ~ span {
+  left: 75%; /* Geser ke posisi "Login/Logout" */
+}
+
+nav a {
+  flex: 1; /* Setiap link mendapat proporsi yang sama */
+  text-align: center;
+}
+
+nav a:last-child {
+  border-right: none; /* Hapus garis terakhir */
+}
+
+nav a:hover {
+  color: #33fffc; /* Memberikan sedikit highlight */
+}
